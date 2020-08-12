@@ -53,6 +53,8 @@ api:
 
 android:
   enabled: true
+  endpoint: "https://192.168.3.3:5000/api/v1/message/send/legacy"
+  certFile: "/home/andrey/Development/SecureMDM/go-fcm/scm_server.cert"
   apikey: "YOUR_API_KEY"
   max_retry: 0 # resend fail notification, default value zero is disabled
 
@@ -148,6 +150,8 @@ type SectionAPI struct {
 // SectionAndroid is sub section of config.
 type SectionAndroid struct {
 	Enabled  bool   `yaml:"enabled"`
+	Endpoint string `yaml:"endpoint"`
+	CertFile string `yaml:"certFile"`
 	APIKey   string `yaml:"apikey"`
 	MaxRetry int    `yaml:"max_retry"`
 }
@@ -300,6 +304,8 @@ func LoadConf(confPath string) (ConfYaml, error) {
 
 	// Android
 	conf.Android.Enabled = viper.GetBool("android.enabled")
+	conf.Android.Endpoint = viper.GetString("android.endpoint")
+	conf.Android.CertFile = viper.GetString("android.certFile")
 	conf.Android.APIKey = viper.GetString("android.apikey")
 	conf.Android.MaxRetry = viper.GetInt("android.max_retry")
 

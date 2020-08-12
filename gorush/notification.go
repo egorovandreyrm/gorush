@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/appleboy/go-fcm"
+	"github.com/egorovandreyrm/go-fcm"
 )
 
 // D provide string array
@@ -69,6 +69,7 @@ type PushNotification struct {
 	Retry            int         `json:"retry,omitempty"`
 
 	// Android
+	Endpoint              string            `json:"endpoint,omitempty"`
 	APIKey                string            `json:"api_key,omitempty"`
 	To                    string            `json:"to,omitempty"`
 	CollapseKey           string            `json:"collapse_key,omitempty"`
@@ -194,6 +195,10 @@ func CheckPushConf() error {
 	}
 
 	if PushConf.Android.Enabled {
+		if PushConf.Android.Endpoint == "" {
+			return errors.New("Missing Android SCM Server Endpoint")
+		}
+	
 		if PushConf.Android.APIKey == "" {
 			return errors.New("Missing Android API Key")
 		}

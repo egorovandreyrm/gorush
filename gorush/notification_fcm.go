@@ -4,24 +4,32 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/appleboy/go-fcm"
+	"github.com/egorovandreyrm/go-fcm"
 	"github.com/sirupsen/logrus"
 )
 
 // InitFCMClient use for initialize FCM Client.
-func InitFCMClient(key string) (*fcm.Client, error) {
+func InitFCMClient(endpoint string, certFile string, key string) (*fcm.Client, error) {
 	var err error
+
+	if endpoint == "" {
+		return nil, errors.New("Missing Android SCM Server Endpoint")
+	}
+
+	if certFile == "" {
+		return nil, errors.New("Missing Android SCM Server Cert File")
+	}
 
 	if key == "" {
 		return nil, errors.New("Missing Android API Key")
 	}
 
 	if key != PushConf.Android.APIKey {
-		return fcm.NewClient(key)
+		return fcm.NewClient(endpoint, certFile, key)
 	}
 
 	if FCMClient == nil {
-		FCMClient, err = fcm.NewClient(key)
+		FCMClient, err = fcm.NewClient(endpoint, certFile, key)
 		return FCMClient, err
 	}
 
@@ -125,11 +133,12 @@ func PushToAndroid(req PushNotification) {
 Retry:
 	notification := GetAndroidNotification(req)
 
+	apiKey := PushConf.Android.APIKey
 	if req.APIKey != "" {
-		client, err = InitFCMClient(req.APIKey)
-	} else {
-		client, err = InitFCMClient(PushConf.Android.APIKey)
+		apiKey = req.APIKey
 	}
+
+	client, err = InitFCMClient(PushConf.Android.Endpoint, PushConf.Android.CertFile, apiKey)
 
 	if err != nil {
 		// FCM server error

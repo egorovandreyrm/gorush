@@ -6,7 +6,6 @@ require (
 	github.com/apex/gateway v1.1.1
 	github.com/appleboy/com v0.0.2
 	github.com/appleboy/gin-status-api v1.1.0
-	github.com/appleboy/go-fcm v0.1.5
 	github.com/appleboy/gofight/v2 v2.1.2
 	github.com/asdine/storm/v3 v3.1.1
 	github.com/aws/aws-lambda-go v1.13.3 // indirect
@@ -14,6 +13,7 @@ require (
 	github.com/cespare/xxhash/v2 v2.1.1 // indirect
 	github.com/dgraph-io/badger/v2 v2.0.3
 	github.com/dgryski/go-farm v0.0.0-20191112170834-c2139c5d712b // indirect
+	github.com/egorovandreyrm/go-fcm v0.1.7
 	github.com/gin-contrib/logger v0.0.2
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-redis/redis/v7 v7.2.0

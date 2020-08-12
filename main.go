@@ -63,7 +63,7 @@ func main() {
 	flag.StringVar(&opts.Ios.KeyID, "key-id", "", "iOS Key ID for P8 token")
 	flag.StringVar(&opts.Ios.TeamID, "team-id", "", "iOS Team ID for P8 token")
 	flag.StringVar(&opts.Ios.Password, "P", "", "iOS certificate password for gorush")
-	flag.StringVar(&opts.Ios.Password, "password", "", "iOS certificate password for gorush")
+	flag.StringVar(&opts.Ios.Password, "password", "", "iOS certificate password for gorush")	
 	flag.StringVar(&opts.Android.APIKey, "k", "", "Android api key configuration for gorush")
 	flag.StringVar(&opts.Android.APIKey, "apikey", "", "Android api key configuration for gorush")
 	flag.StringVar(&opts.Core.Address, "A", "", "address to bind")
@@ -283,7 +283,7 @@ func main() {
 		gorush.LogError.Fatal(err)
 	}
 
-	if _, err = gorush.InitFCMClient(gorush.PushConf.Android.APIKey); err != nil {
+	if _, err = gorush.InitFCMClient(gorush.PushConf.Android.Endpoint, gorush.PushConf.Android.CertFile, gorush.PushConf.Android.APIKey); err != nil {
 		gorush.LogError.Fatal(err)
 	}
 

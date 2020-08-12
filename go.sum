@@ -66,6 +66,14 @@ github.com/dgryski/go-farm v0.0.0-20191112170834-c2139c5d712b/go.mod h1:SqUrOPUn
 github.com/dgryski/go-sip13 v0.0.0-20181026042036-e10d5fee7954/go.mod h1:vAd38F8PWV+bWy6jNmig1y/TA+kYO4g3RSRF0IAv0no=
 github.com/dustin/go-humanize v1.0.0 h1:VSnTsYCnlFHaM2/igO1h6X3HA71jcobQuxemgkq4zYo=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
+github.com/egorovandreyrm/go-fcm v0.1.6 h1:qAJK90BCsoagCoJQ5aiSLSTgIYS7YhpsvvDJF6n79W4=
+github.com/egorovandreyrm/go-fcm v0.1.6/go.mod h1:j3wqJ6mDX3R25F9/sbsjusJqw0IHQn4/pNM5CoT5dmo=
+github.com/egorovandreyrm/go-fcm v0.1.7 h1:d1jplTVGSKyWWM88vXqdv30r/ubVTzJMRBeCWqZMYtU=
+github.com/egorovandreyrm/go-fcm v0.1.7/go.mod h1:j3wqJ6mDX3R25F9/sbsjusJqw0IHQn4/pNM5CoT5dmo=
+github.com/egorovandreyrm/go-fcm v0.1.8 h1:yb25zr73fAkeFkyfsykC4AtS5DF3oWDFB9P8tvnMnF0=
+github.com/egorovandreyrm/go-fcm v0.1.8/go.mod h1:j3wqJ6mDX3R25F9/sbsjusJqw0IHQn4/pNM5CoT5dmo=
+github.com/egorovandreyrm/go-fcm v0.1.9 h1:9xi65v+e9neQABZdJByFNA7yKUQDHCta0ZVEY+IqpZQ=
+github.com/egorovandreyrm/go-fcm v0.1.9/go.mod h1:j3wqJ6mDX3R25F9/sbsjusJqw0IHQn4/pNM5CoT5dmo=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.4/go.mod h1:6rpuAdCZL397s3pYoYcLgu1mIlRU8Am5FuJP05cCM98=
