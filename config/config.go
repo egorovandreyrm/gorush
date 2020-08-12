@@ -53,8 +53,8 @@ api:
 
 android:
   enabled: true
-  endpoint: "https://192.168.3.3:5000/api/v1/message/send/legacy"
-  certFile: "/home/andrey/Development/SecureMDM/go-fcm/scm_server.cert"
+  endpoint: "https://YOUR_SCM_SERVER_HOST:5000/api/v1/message/send/legacy"
+  certFile: "PATH_TO_YOUR_CERTIFICATE.cert"
   apikey: "YOUR_API_KEY"
   max_retry: 0 # resend fail notification, default value zero is disabled
 
